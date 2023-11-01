@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/brandconfig/db" VERSION="20231030" COMMENT="XMLDB file for Moodle local/brandconfig"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="brandetails" COMMENT="Record of brand details are saved for different tenants.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="companyid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="theme" TYPE="char" LENGTH="100" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="brandlogo" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="maincolor" TYPE="char" LENGTH="200" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="customcss" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="footertext" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="creatorid" TYPE="int" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="loginconfig" COMMENT="Record of login configuration.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="companyid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="loginlogo" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="backlogo" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="color" TYPE="char" LENGTH="150" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="usernametext" TYPE="char" LENGTH="200" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="passwordtext" TYPE="char" LENGTH="200" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="forgetpasstext" TYPE="char" LENGTH="200" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="signuptext" TYPE="char" LENGTH="200" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="signintext" TYPE="char" LENGTH="200" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="footercopyrighttext" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="loginbannertext" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="logintitletext" TYPE="char" LENGTH="250" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="creatorid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="role_based_blocks" COMMENT="Record role based blocks is saved. ">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="blockinstance" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="companyid" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="role" TYPE="char" LENGTH="150" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
